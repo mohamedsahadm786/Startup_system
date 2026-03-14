@@ -177,3 +177,7 @@ class ConnectionResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class ConnectionAccept(BaseModel):
+    status: str    # should be "accepted" or "rejected"
