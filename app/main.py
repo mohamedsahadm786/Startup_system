@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from app.database import engine
 from app import models
-from app.routers import auth, startups, investors, evaluations, pitch_decks
+from app.routers import auth, startups, investors, evaluations, pitch_decks, events
 
 load_dotenv()
 
@@ -28,6 +28,7 @@ app.include_router(startups.router)
 app.include_router(investors.router)
 app.include_router(evaluations.router)
 app.include_router(pitch_decks.router)
+app.include_router(events.router)
 
 @app.get("/health", tags=["Health"])
 def health_check():
